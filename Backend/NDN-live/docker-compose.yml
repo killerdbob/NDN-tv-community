@@ -1,0 +1,76 @@
+version: '3.1'
+services:
+  oss:
+    image: minio/minio:RELEASE.2021-11-24T23-19-33Z
+    ports:
+      - 10009:9000
+      - 11909:9091
+    networks:
+      - record
+    restart: always
+    command: server --console-address ":9091" /data
+    environment:
+      MINIO_ROOT_USER: ndn
+      MINIO_ROOT_PASSWORD: 123456@pcl
+    volumes:
+      - /home/minio/data:/data
+    logging: 
+      driver: "json-file" 
+      options: 
+        max-size: "10m" 
+
+  record_scanner:
+    build: 
+      context: .
+      dockerfile: Dockerfile_record
+    image: 124.71.214.179:8084/ndn-video-record
+    command: python src/sche_serve_record.py
+    depends_on:
+      - oss
+    restart: always
+    networks:
+      - record
+    volumes:
+      - /home/minio/data/ndn:/home/srs/record
+      - /home/srs/trash:/home/srs/trash
+    extra_hosts:
+      - "remote.ndn:192.168.236.93"
+      - "record.server:192.168.236.93"
+    environment:
+      register_node: tcp4://remote.ndn:8081
+      prefix: /pcl/video
+    logging: 
+      driver: "json-file" 
+      options: 
+        max-size: "10m"
+
+  record_server:
+    build: 
+      context: .
+      dockerfile: Dockerfile_record
+    image: 124.71.214.179:8084/ndn-video-record
+    command: python src/record_serve.py
+    depends_on:
+      - oss
+    restart: always
+    # network_mode: "host" 
+    networks:
+      - record
+    extra_hosts:
+      - "remote.ndn:192.168.236.93"
+    environment:
+      register_node: tcp4://remote.ndn:8081
+      prefix: /pcl/video
+    logging: 
+      driver: "json-file" 
+      options: 
+        max-size: "10m"
+
+networks:
+  record:
+    driver:
+      bridge
+    ipam:
+      config:
+        - subnet: 10.13.16.0/24
+          gateway: 10.13.16.1

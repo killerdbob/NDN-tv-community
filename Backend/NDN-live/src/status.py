@@ -1,0 +1,2 @@
+LIVE = 0
+RECORD = 1

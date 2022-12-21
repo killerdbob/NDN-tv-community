@@ -1,0 +1,8 @@
+version: "2.4"
+services:
+  ndn_client:
+    build: .
+    ports:
+      - "8081:3333"
+    privileged: true
+    tty: true

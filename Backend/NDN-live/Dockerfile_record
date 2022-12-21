@@ -1,0 +1,20 @@
+FROM 124.71.214.179:8084/python:3.9-alpine
+
+ARG REGISTER_PREFIX=/pcl/video
+
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
+    apk upgrade && \
+    apk add ffmpeg gcc libc-dev
+
+COPY . /home/ndn-live
+WORKDIR /home/ndn-live
+
+RUN pip install -r /home/ndn-live/src/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/ && \
+    pyndnsec Init-Pib && \
+    pyndnsec New-Item ${REGISTER_PREFIX} && \
+    rm -rf /var/cache/apk/* && \
+    rm -rf /root/.cache && \
+    rm -rf /tmp/* && \
+    cp -r /home/ndn-live/ndn_conf/* /root/.ndn/
+
+# ENTRYPOINT [ "python" ]

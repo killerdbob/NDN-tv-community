@@ -1,0 +1,68 @@
+{
+  "sitename": "鹏城点播平台",
+  "catalog": [
+    {
+      "title": "Junxiao点播 微微",
+      "name": "ndn:/sl/video/sample/playlist.mpd",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "Junxiao点播 热爱105°C",
+      "name": "ndn:/sl/music/reai105/playlist.mpd",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "测试点播-内网",
+      "name": "ndn:/sl/record/weiwei/playlist.m3u8",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "测试直播-内网",
+      "name": "ndn:/sl/live/pcl/playlist.m3u8",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "测试点播-外网-http",
+      "name": "http://192.168.236.93:8080/live/test/playlist.m3u8",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "测试点播-央视-http",
+      "name": "http://127.0.0.1:3333/playlist.m3u8",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "测试点播-外网",
+      "name": "ndn:/pcnl/ndn/video/sz02/record/football/playlist.m3u8",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "测试直播-外网",
+      "name": "ndn:/pcnl/ndn/video/sz02/live/test/playlist.m3u8",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    },
+    {
+      "title": "测试直播-网络靶场",
+      "name": "ndn:/pcnl/ndn/video/sz02/live/L36717bcab97e11eca5e50242ac170003/playlist.m3u8",
+      "fallback": "https://vimeo.com/channels/ndnvfaq/163047407",
+      "date": "2014-09-24T00:00:00",
+      "tags": ["VFAQ"]
+    }
+  ]
+}
