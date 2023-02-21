@@ -21,6 +21,8 @@ services:
 
   record_scanner:
     build: 
+      args:
+        REGISTER_PREFIX: /pcl/video
       context: .
       dockerfile: Dockerfile_record
     image: 124.71.214.179:8084/ndn-video-record
@@ -47,6 +49,8 @@ services:
 
   record_server:
     build: 
+      args:
+        REGISTER_PREFIX: /pcl/video
       context: .
       dockerfile: Dockerfile_record
     image: 124.71.214.179:8084/ndn-video-record
