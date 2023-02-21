@@ -36,6 +36,7 @@ services:
     extra_hosts:
       - "remote.ndn:192.168.236.93"
       - "record.server:192.168.236.93"
+      - "oss:192.168.236.93"
     environment:
       register_node: tcp4://remote.ndn:8081
       prefix: /pcl/video
@@ -58,6 +59,7 @@ services:
       - record
     extra_hosts:
       - "remote.ndn:192.168.236.93"
+      - "oss:192.168.236.93"
     environment:
       register_node: tcp4://remote.ndn:8081
       prefix: /pcl/video
