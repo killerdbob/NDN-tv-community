@@ -1,14 +1,3 @@
-
-## Installation
-```
-1、install node、pm2、docker、docker-compose
-2、install python package: pip install -r src/requirements.txt
-3、you should configure your own configure file, src/config.py
-4、you could start as docker using src/conf/docker-compose.yml, docker-compose up -d
-5、you should change nfd port in ndn_conf/client.conf, this will automatically register into nfd.
-6、how to run ? ---> bash deploy.sh --build 
-```
-
 ## Configuration
 ```
 How to config Prefix in src/config.py?
