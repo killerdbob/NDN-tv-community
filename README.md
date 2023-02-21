@@ -7,7 +7,8 @@ We have an online web, at https://live.pcl.ac.cn. It will demonstrate both live 
 ### Follow these steps:
 
 - **step 1**，install docker and docker-compose on your computer.
-- **step 2**，just run commands `docker-compose up -d` in every subdirectory which contains docker-compose.yml, and everything will be set up for you, of course, you must config those config files.
+- **step 2**，build docker image, `docker-compose build`.
+- **step 3**，just run commands `docker-compose up -d` in every subdirectory which contains docker-compose.yml, and everything will be set up for you, of course, you must config those config files.
 
 ### Configuration:
 - The most difficult part must be the config file, and we provide a default one. You should provide your prefix to register into the global NDN testbed, or you could install NFD locally. 
