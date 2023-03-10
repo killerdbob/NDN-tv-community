@@ -1,4 +1,4 @@
-FROM 124.71.214.179:8084/python:3.9-alpine
+FROM python:3.9-alpine
 
 ARG REGISTER_PREFIX=/pcl/video
 
